@@ -1,0 +1,179 @@
+/* =======================================
+   Global
+======================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #4cb3e0, #00759c, #006aff);
+  overflow-x: hidden;
+  color: #fff;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 80px;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  transition: width 0.3s, transform 0.3s;
+  z-index: 1000;
+}
+
+.sidebar:hover {
+  width: 220px;
+}
+
+.sidebar ul {
+  list-style: none;
+  width: 100%;
+}
+
+.sidebar ul li {
+  width: 100%;
+}
+
+.sidebar ul li a {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.sidebar ul li a:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.sidebar ul li a img {
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+}
+
+.sidebar ul li a span {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.sidebar:hover ul li a span {
+  opacity: 1;
+}
+
+/* ===== Контент ===== */
+.content {
+  margin-left: 80px;
+  padding: 40px;
+  color: #fff;
+  z-index: 1;
+  flex: 1;
+  transition: margin-left 0.3s;
+}
+
+.sidebar:hover ~ .content {
+  margin-left: 220px;
+}
+
+/* Курстар карточкалары */
+.courses-section {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.course-card {
+  background: rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+
+.course-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.course-card p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.course-card button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #3a8dff, #6dd5fa);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.course-card button:hover {
+  transform: scale(1.05);
+}
+
+/* =====📱 Мобильді адаптация ===== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    font-size: 30px;
+    color: white;
+    background: rgba(0,0,0,0.4);
+    padding: 5px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+    width: 220px;
+    height: 100vh;
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .sidebar:hover {
+    width: 220px;
+  }
+
+  .content {
+    margin: 0;
+    padding: 20px;
+    margin-top: 60px;
+  }
+
+  .sidebar ul li a span {
+    opacity: 1;
+  }
+}

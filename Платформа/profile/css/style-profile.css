@@ -1,0 +1,250 @@
+/* ===== Жалпы стильдер ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #4cb3e0, #00759c, #006aff);
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ===== Фон эффект ===== */
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* ===== Sidebar ===== */
+/* ===== Sidebar ===== */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 80px;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  transition: width 0.3s, transform 0.3s;
+  z-index: 1000;
+}
+
+.sidebar:hover {
+  width: 220px;
+}
+
+.sidebar ul {
+  list-style: none;
+  width: 100%;
+}
+
+.sidebar ul li {
+  width: 100%;
+}
+
+.sidebar ul li a {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.sidebar ul li a:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.sidebar ul li a img {
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+}
+
+.sidebar ul li a span {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.sidebar:hover ul li a span {
+  opacity: 1;
+}
+
+/* ===== Контент ===== */
+.glass-container {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 40px;
+  margin-left: 110px;
+  margin-top: 50px;
+  width: calc(100% - 130px);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+}
+
+.glass-container::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.15);
+  border-radius: 20px;
+  z-index: -1;
+}
+
+.profile-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 25px;
+}
+
+.avatar img {
+  width: 100px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+
+.user-details p {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.edit-btn {
+  margin-top: 15px;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #3a8dff, #6dd5fa);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.3s ease;
+}
+
+.edit-btn:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Прогресс бар ===== */
+.progress-bar {
+  margin: 15px 0;
+}
+
+.bar {
+  width: 100%;
+  height: 20px;
+  background: rgba(255,255,255,0.25);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(135deg, #3a8dff, #6dd5fa);
+  text-align: center;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* ===== Бейдждер ===== */
+.badge {
+  display: inline-block;
+  padding: 5px 12px;
+  margin: 5px;
+  background: rgba(255,255,255,0.25);
+  border-radius: 20px;
+  font-size: 12px;
+  color: #fff;
+}
+
+/* ===== Мобильді батырма ===== */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background: rgba(255,255,255,0.25);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: #fff;
+  font-size: 18px;
+  z-index: 6;
+  cursor: pointer;
+}
+/* =====📱 Мобильді адаптация ===== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    font-size: 30px;
+    color: white;
+    background: rgba(0,0,0,0.4);
+    padding: 5px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+    width: 220px;
+    height: 100vh;
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .sidebar:hover {
+    width: 220px;
+  }
+
+  .content {
+    margin: 0;
+    padding: 20px;
+    margin-top: 60px;
+  }
+
+  .sidebar ul li a span {
+    opacity: 1;
+  }
+  .menu-toggle {
+    display: block;
+  }
+
+  .glass-container {
+    margin: 90px auto;
+    width: 90%;
+    margin-left: auto;
+  }
+
+  .sidebar span {
+    opacity: 1;
+  }
+  .profile-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}

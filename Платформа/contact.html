@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Байланыс — QAZION</title>
+  <link rel="stylesheet" href="css/style-contact.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+
+  <script>
+    (function(){
+        emailjs.init("GDmvAe5ozkdAiELLq"); // Сенің PUBLIC KEY
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Фон эффект -->
+  <div id="particles-js"></div>
+
+  <!-- Мобильді меню батырмасы -->
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <!-- Sidebar меню -->
+  <nav class="sidebar">
+    <ul>
+      <li><a href="..//Платформа/index.html"><img src="..//images/icons/1.png" alt=""> <span>Басты бет</span></a></li>
+      <li><a href="..//Платформа/courses.html"><img src="..//images/icons/2.png" alt=""> <span>Курстар</span></a></li>
+      <li><a href="..//Блакнот/index.html"><img src="..//images/icons/3.png" alt=""> <span>Блокнот</span></a></li>
+      <li><a href="..//Платформа/video.html"><img src="..//images/icons/4.png" alt=""> <span>Видео сабақтар</span></a></li>
+      <li><a href="../Платформа/profile/profile.html"><img src="..//images/icons/5.png" alt=""> <span>Профиль</span></a></li>
+      <li><a href="#.html"><img src="..//images/icons/6.png" alt=""> <span>Мұғалімдер</span></a></li>
+      <li class="active"><a href="contact.html"><img src="..//images/icons/7.png" alt=""> <span>Байланыс</span></a></li>
+      <li><a href="../../index.html"><img src="..//images/icons/8.png" alt=""> <span>Шығу</span></a></li>
+    </ul>
+  </nav>
+
+  <!-- Контент -->
+  <main class="content">
+
+    <section class="contact-section">
+      <h2>Бізбен байланыс</h2>
+
+      <form id="contactForm">
+        <input type="text" id="name" name="name" placeholder="Аты-жөні" required>
+        <input type="email" id="email" name="email" placeholder="Email" required>
+        <textarea id="message" name="message" placeholder="Хабарлама" required></textarea>
+        <button type="submit">Жіберу</button>
+      </form>
+
+      <p id="statusMessage"></p>
+    </section>
+
+    <div class="contact-info">
+  <p>Телефон: +7 708 714 8580</p>
+  <p>Email: info@qazion.kz</p>
+  <p>Мекенжай: Ақмола облысы, Көкшетау қаласы, Ш.Уалиханов университеті.</p>
+
+  <div class="social-icons">
+    <a href="https://wa.me/77087148552?text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%D0%B5%D1%82%D1%81%D1%96%D0%B7%D0%B1%D0%B5%3F%20%D0%A1%D2%B1%D1%80%D0%B0%D2%93%D1%8B%D0%BC%20%D0%B1%D0%B0%D1%80%20%D0%B5%D0%B4%D1%96%20QAZION%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%81%D1%8B%20%D0%B1%D0%BE%D0%B9%D1%8B%D0%BD%D1%88%D0%B0." target="_blank">
+      <img src="../images/whatsapp.png" alt="WhatsApp">
+    </a>
+    <a href="https://ig.clck.bar/beka__saparbaev" target="_blank">
+      <img src="../images/instagram.png" alt="Instagram">
+    </a>
+    <a href="https://t.me/+77058738580" target="_blank">
+      <img src="../images/telegram.png" alt="Telegram">
+    </a>
+    <a href="mailto:mov1607182@gmail.com" target="_blank">
+    <img src="../images/gmail.png" alt="Gmail">
+  </a>
+  </div>
+</div>
+
+  </main>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(event){
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !email || !message) {
+        alert("Барлық өрістерді толтырыңыз!");
+        return;
+    }
+
+    // EmailJS шаблонға параметрлер
+    const params = {
+        from_name: name,      // {{from_name}} шаблон өрісі
+        from_email: email,    // {{from_email}} шаблон өрісі
+        message: message,     // {{message}} шаблон өрісі
+        time: new Date().toLocaleString() // {{time}} өрісі
+    };
+
+    emailjs.send("service_g87mrxp", "template_gco90ki", params)
+        .then(function() {
+            document.getElementById("statusMessage").innerText = "Хабарлама сәтті жіберілді!";
+            document.getElementById("contactForm").reset();
+        })
+        .catch(function(error) {
+            console.error("EmailJS қатесі:", error);
+            document.getElementById("statusMessage").innerText = "Қате шықты. Қайта көріңіз.";
+        });
+});
+</script>
+  <!-- Мобильді меню үшін JS -->
+  <script>
+    function toggleMenu() {
+      document.querySelector('.sidebar').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

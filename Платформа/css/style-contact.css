@@ -1,0 +1,193 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #4cb3e0, #00759c, #006aff);
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Фон */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Контент */
+.content {
+  margin-left: 120px;
+  padding: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Байланыс бөлімі */
+.contact-section {
+  max-width: 450px;
+  padding: 25px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 25px rgba(0,0,0,0.2);
+}
+
+.contact-section h2 {
+  margin-bottom: 15px;
+}
+
+/* Формалар */
+.contact-section input,
+.contact-section textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.25);
+  color: #fff;
+}
+
+.contact-section button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  background: #0095ff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.contact-info {
+  margin-top: 25px;
+  padding: 20px;
+  background: rgba(0,0,0,0.25);
+  border-radius: 15px;
+  backdrop-filter: blur(8px);
+}
+/* ===== Sidebar ===== */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 80px;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  transition: width 0.3s, transform 0.3s;
+  z-index: 1000;
+}
+
+.sidebar:hover {
+  width: 220px;
+}
+
+.sidebar ul {
+  list-style: none;
+  width: 100%;
+}
+
+.sidebar ul li {
+  width: 100%;
+}
+
+.sidebar ul li a {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.sidebar ul li a:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.sidebar ul li a img {
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+}
+
+.sidebar ul li a span {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.sidebar:hover ul li a span {
+  opacity: 1;
+}
+
+/* =====📱 Мобильді адаптация ===== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    font-size: 30px;
+    color: white;
+    background: rgba(0,0,0,0.4);
+    padding: 5px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+    width: 220px;
+    height: 100vh;
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .sidebar:hover {
+    width: 220px;
+  }
+
+  .content {
+    margin: 0;
+    padding: 20px;
+    margin-top: 60px;
+  }
+
+  .sidebar ul li a span {
+    opacity: 1;
+  }
+}
+/* ===== Әлеуметтік желі иконкалары ===== */
+.social-icons {
+  display: flex;
+  gap: 15px; /* Иконкалар арасындағы қашықтық */
+  margin-top: 15px;
+}
+
+.social-icons a img {
+  width: 40px;   /* Иконка өлшемі */
+  height: 40px;
+  transition: transform 0.3s, filter 0.3s;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.15);
+  padding: 5px;
+}
+
+.social-icons a img:hover {
+  transform: scale(1.2);       /* Hover кезінде үлкейту */
+  filter: brightness(1.3);     /* Жарықтығын сәл арттыру */
+  cursor: pointer;
+}

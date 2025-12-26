@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Заголовки (H1-H6) — QAZION</title>
+  <link rel="stylesheet" href="../css/style-lectures.css">
+</head>
+<body>
+  <!-- Мобильді меню батырмасы -->
+  <button class="menu-toggle">☰</button>
+  <!-- Sidebar меню -->
+  <nav class="sidebar">
+    <ul>
+      <li><a href="../../index.html"><img src="../../../images/icons/1.png" alt=""> <span>Басты бет</span></a></li>
+      <li class="active"><a href="../../courses.html"><img src="../../../images/icons/2.png" alt=""> <span>Курстар</span></a></li>
+      <li><a href="../../../Блакнот/index.html"><img src="../../../images/icons/3.png" alt=""> <span>Блокнот</span></a></li>
+      <li><a href="../../video.html"><img src="../../../images/icons/4.png" alt=""> <span>Видео сабақтар</span></a></li>
+      <li><a href="../../profile/profile.html"><img src="../../../images/icons/5.png" alt=""> <span>Профиль</span></a></li>
+      <li><a href="../../teachers.html"><img src="../../../images/icons/6.png" alt=""> <span>Мұғалімдер</span></a></li>
+      <li><a href="../../contact.html"><img src="../../../images/icons/7.png" alt=""> <span>Байланыс</span></a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <h1>Заголовки (H1-H6)</h1>
+
+    <p>HTML-де мәтінді тақырыптарға бөлу үшін H1-H6 тегтері қолданылады:</p>
+    <ul>
+      <li>&lt;h1&gt; — ең үлкен, басты тақырып</li>
+      <li>&lt;h2&gt; — екінші деңгейлі тақырып</li>
+      <li>&lt;h3&gt; — үшінші деңгейлі тақырып</li>
+      <li>&lt;h4&gt; — төртінші деңгейлі тақырып</li>
+      <li>&lt;h5&gt; — бесінші деңгейлі тақырып</li>
+      <li>&lt;h6&gt; — ең кіші тақырып</li>
+    </ul>
+
+    <h2>Мысал:</h2>
+    <pre><code>&lt;h1&gt;Менің басты тақырып&lt;/h1&gt;
+&lt;h2&gt;Екінші деңгей тақырыбы&lt;/h2&gt;
+&lt;h3&gt;Үшінші деңгей тақырыбы&lt;/h3&gt;
+&lt;h4&gt;Төртінші деңгей тақырыбы&lt;/h4&gt;
+&lt;h5&gt;Бесінші деңгей тақырыбы&lt;/h5&gt;
+&lt;h6&gt;Ең кіші тақырып&lt;/h6&gt;
+</code></pre>
+
+    <h2>Нәтиже экран:</h2>
+    <iframe srcdoc="&lt;h1&gt;Менің басты тақырып&lt;/h1&gt;&lt;h2&gt;Екінші деңгей тақырыбы&lt;/h2&gt;&lt;h3&gt;Үшінші деңгей тақырыбы&lt;/h3&gt;&lt;h4&gt;Төртінші деңгей тақырыбы&lt;/h4&gt;&lt;h5&gt;Бесінші деңгей тақырыбы&lt;/h5&gt;&lt;h6&gt;Ең кіші тақырып&lt;/h6&gt;" frameborder="0" class="result-frame"></iframe>
+  <a href="../HTML/html.html"><button class="back-btn">Артқа қайту</button></a>
+  </main>
+
+  <script src="../js/script-lectures.js"></script>
+    <script>
+    // Телефонда sidebar ашу/жабу
+    const menuBtn = document.querySelector('.menu-toggle');
+    const sidebar = document.querySelector('.sidebar');
+
+    menuBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

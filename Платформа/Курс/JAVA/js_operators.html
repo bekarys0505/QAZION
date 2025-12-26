@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Операторлар және есептеулер — QAZION</title>
+  <link rel="stylesheet" href="../css/style-lectures.css">
+</head>
+<body>
+  <button class="menu-toggle">☰</button>
+
+
+  <nav class="sidebar">
+    <ul>
+      <li><a href="../../index.html"><img src="../../../images/icons/1.png" alt=""> <span>Басты бет</span></a></li>
+      <li class="active"><a href="../../courses.html"><img src="../../../images/icons/2.png" alt=""> <span>Курстар</span></a></li>
+      <li><a href="../../../Блакнот/index.html"><img src="../../../images/icons/3.png" alt=""> <span>Блокнот</span></a></li>
+      <li><a href="../../video.html"><img src="../../../images/icons/4.png" alt=""> <span>Видео сабақтар</span></a></li>
+      <li><a href="../../profile/profile.html"><img src="../../../images/icons/5.png" alt=""> <span>Профиль</span></a></li>
+      <li><a href="../../teachers.html"><img src="../../../images/icons/6.png" alt=""> <span>Мұғалімдер</span></a></li>
+      <li><a href="../../contact.html"><img src="../../../images/icons/7.png" alt=""> <span>Байланыс</span></a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <h1>Операторлар және есептеулер</h1>
+
+    <p>JavaScript-те есептеулер үшін әртүрлі операторлар қолданылады. Операторлар айнымалылар мен мәндерге амалдар жасауға мүмкіндік береді.</p>
+
+    <h2>Сандық операторлар</h2>
+    <ul>
+      <li><code>+</code> – қосу</li>
+      <li><code>-</code> – алу</li>
+      <li><code>*</code> – көбейту</li>
+      <li><code>/</code> – бөлу</li>
+      <li><code>%</code> – қалдық</li>
+      <li><code>++</code> – бірлікке көбейту (инкремент)</li>
+      <li><code>--</code> – бірлікке азайту (декремент)</li>
+    </ul>
+
+    <h2>Мәліметтерді салыстыру операторлары</h2>
+    <ul>
+      <li><code>==</code> – тең бе</li>
+      <li><code>===</code> – мәні мен типі тең бе</li>
+      <li><code>!=</code> – тең емес</li>
+      <li><code>!==</code> – мәні немесе типі тең емес</li>
+      <li><code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code> – салыстыру</li>
+    </ul>
+
+    <h2>Логикалық операторлар</h2>
+    <ul>
+      <li><code>&&</code> – және</li>
+      <li><code>||</code> – немесе</li>
+      <li><code>!</code> – теріс</li>
+    </ul>
+
+    <h2>Мысал:</h2>
+    <pre><code>&lt;script&gt;
+let a = 10;
+let b = 5;
+
+// Арифметикалық операциялар
+let sum = a + b;
+let diff = a - b;
+let mult = a * b;
+let div = a / b;
+let mod = a % b;
+
+// Салыстыру
+let isEqual = a === b;
+let isGreater = a &gt; b;
+
+// Логикалық
+let check = (a &gt; b) &amp;&amp; (b &lt; 10);
+
+console.log("Қосу: " + sum);
+console.log("Алу: " + diff);
+console.log("Көбейту: " + mult);
+console.log("Бөлу: " + div);
+console.log("Қалдық: " + mod);
+console.log("Тең бе: " + isEqual);
+console.log("Үлкен бе: " + isGreater);
+console.log("Логикалық тексеру: " + check);
+&lt;/script&gt;</code></pre>
+
+    <h2>Нәтиже экран:</h2>
+    <iframe srcdoc='
+<script>
+let a = 10;
+let b = 5;
+
+let sum = a + b;
+let diff = a - b;
+let mult = a * b;
+let div = a / b;
+let mod = a % b;
+
+let isEqual = a === b;
+let isGreater = a > b;
+
+let check = (a > b) && (b < 10);
+
+document.write("&lt;p&gt;Қосу: " + sum + "&lt;/p&gt;");
+document.write("&lt;p&gt;Алу: " + diff + "&lt;/p&gt;");
+document.write("&lt;p&gt;Көбейту: " + mult + "&lt;/p&gt;");
+document.write("&lt;p&gt;Бөлу: " + div + "&lt;/p&gt;");
+document.write("&lt;p&gt;Қалдық: " + mod + "&lt;/p&gt;");
+document.write("&lt;p&gt;Тең бе: " + isEqual + "&lt;/p&gt;");
+document.write("&lt;p&gt;Үлкен бе: " + isGreater + "&lt;/p&gt;");
+document.write("&lt;p&gt;Логикалық тексеру: " + check + "&lt;/p&gt;");
+</script>
+' frameborder="0" class="result-frame"></iframe>
+
+    <a href="../../Курс/JAVA/java.html"><button class="back-btn">Артқа қайту</button></a>
+  </main>
+
+  <script src="../js/script-lectures.js"></script>
+  <script>
+    const menuBtn = document.querySelector('.menu-toggle');
+    const sidebar = document.querySelector('.sidebar');
+    menuBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

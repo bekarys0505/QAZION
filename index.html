@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QAZION — Қазақша IT білім платформасы</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar" role="banner">
+    <div class="container nav-inner">
+      <a class="logo" href="#home">QAZION</a>
+
+      <button class="burger" id="burger" aria-label="Мәзір ашу" aria-expanded="false">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+
+      <nav class="nav" id="nav" role="navigation" aria-label="Басты мәзір">
+        <ul class="nav-links">
+          <li><a href="#home">Басты бет</a></li>
+          <li><a href="#features">Негізгі</a></li>
+          <li><a href="#courses">Курстар</a></li>
+          <li><a href="#results">Нәтижелер</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Байланыс</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="Login/LOGIN.html" class="btn btn-sm">Кіру</a>
+        <a href="Register/register.html" class="btn btn-primary btn-sm">Тіркелу</a>
+      </div>
+    </div>
+
+    <!-- mobile slide menu -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <ul>
+        <li><a href="#home" class="mobile-link">Басты бет</a></li>
+        <li><a href="#features" class="mobile-link">Негізгі</a></li>
+        <li><a href="#courses" class="mobile-link">Курстар</a></li>
+        <li><a href="#results" class="mobile-link">Нәтижелер</a></li>
+        <li><a href="#faq" class="mobile-link">FAQ</a></li>
+        <li><a href="#contact" class="mobile-link">Байланыс</a></li>
+        <li class="mobile-cta"><a href="Register/register.html" class="btn btn-primary btn-block">Тіркелу</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <h1>«QAZION» — мектеп оқушылары мен студенттерге арналған веб-платформа</h1>
+          <p>Практикалық веб-бағдарламалау, алгоритмдер және жобалар арқылы 10–11 сынып оқушылары мен студенттерге арналған курстар.</p>
+          <div class="hero-actions">
+            <a href="Register/register.html" class="btn btn-primary btn-large">Сабақты бастау</a>
+            <a href="#courses" class="btn btn-ghost">Курстарды көру</a>
+          </div>
+
+          <ul class="hero-features">
+            <li>Қазақша контент</li>
+            <li>Интерактивті тапсырмалар</li>
+            <li>Өте ыңғайлы интерфейс</li>
+          </ul>
+        </div>
+
+<div class="hero-right">
+  <div class="robot-arena">
+
+    <div class="robot-shadow"></div>
+
+    <div class="robot">
+      <div class="head"></div>
+      <div class="body"></div>
+      <div class="arm left"></div>
+      <div class="arm right"></div>
+      <div class="leg left"></div>
+      <div class="leg right"></div>
+    </div>
+
+    <div class="ball html">HTML</div>
+    <div class="ball css">CSS</div>
+    <div class="ball js">JS</div>
+
+    <canvas id="robot-bg"></canvas>
+
+  </div>
+</div>
+   </div>
+    </section>
+
+    <section id="features" class="features">
+  <div class="container">
+    <h2 class="section-title">Неліктен QAZION?</h2>
+    <div class="features-horizontal" id="featuresHorizontal">
+      <article class="feature-card-horizontal">
+        <div class="icon">📚</div>
+        <div class="feature-text">
+          <h3>Қазақша контент</h3>
+          <p>Барлық сабақтар қазақ тілінде, қиын терминдер қарапайым тілмен түсіндіріледі.</p>
+        </div>
+      </article>
+
+      <article class="feature-card-horizontal">
+        <div class="icon">🧩</div>
+        <div class="feature-text">
+          <h3>Интерактивті жаттығулар</h3>
+          <p>Тек теория емес, практикалық тапсырмалар бар, өз прогресті тексеруге болады.</p>
+        </div>
+      </article>
+
+      <article class="feature-card-horizontal">
+        <div class="icon">🎓</div>
+        <div class="feature-text">
+          <h3>Сертификат</h3>
+          <p>Курсты аяқтаған соң электронды сертификат беріледі.</p>
+        </div>
+      </article>
+
+      <article class="feature-card-horizontal">
+        <div class="icon">💸</div>
+        <div class="feature-text">
+          <h3>Тегін және премиум курстар</h3>
+          <p>Негізгі курстар тегін, кәсіби жобалар премиум режимінде.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+.features-horizontal{
+  display:flex;
+  gap:20px;
+  overflow-x:auto;
+  padding-bottom:10px;
+  scroll-behavior:smooth;
+}
+
+.feature-card-horizontal{
+  min-width:360px;
+  flex:0 0 auto;
+  display:flex;
+  gap:16px;
+  background:white;
+  border-radius:12px;
+  padding:16px;
+  box-shadow:0 12px 30px rgba(20,30,60,0.06);
+  transition:transform .3s, box-shadow .3s;
+}
+
+.feature-card-horizontal:hover{
+  transform:scale(1.05);
+  box-shadow:0 20px 50px rgba(20,30,60,0.12);
+}
+
+.feature-card-horizontal .icon{
+  font-size:36px;
+  flex-shrink:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.feature-card-horizontal .feature-text h3{
+  margin:0 0 8px;
+  font-size:18px;
+  color:#081028;
+}
+
+.feature-card-horizontal .feature-text p{
+  margin:0;
+  color:#556;
+  font-size:15px;
+}
+
+/* Скролл бар */
+.features-horizontal::-webkit-scrollbar{
+  height:6px;
+}
+.features-horizontal::-webkit-scrollbar-thumb{
+  background:rgba(95,108,255,0.4);
+  border-radius:4px;
+}
+.features-horizontal::-webkit-scrollbar-track{
+  background:rgba(0,0,0,0.05);
+}
+</style>
+
+<script>
+const container = document.getElementById('featuresHorizontal');
+
+// Мышканың дөңгелегін айналдырғанда горизонталь скролл
+container.addEventListener('wheel', (e)=>{
+  e.preventDefault();
+  container.scrollLeft += e.deltaY;
+});
+</script>
+
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2 class="section-title">Біз туралы</h2>
+        <p class="lead">«QAZION» пайдаланушыларға HTML, CSS, JavaScript және басқа да бағдарламалау тілдерін үйрену, онлайн тәжірибе алу және өз жобаларын жариялау мүмкіндігін береді.</p>
+      </div>
+    </section>
+
+    <!-- COURSES -->
+    <section id="courses" class="courses">
+      <div class="container">
+        <h2 class="section-title">Біздің курстар</h2>
+        <div class="course-grid">
+          <article class="course-card">
+            <img src="images/html-course.jpg" alt="HTML және CSS">
+            <div class="card-body">
+              <h3>HTML және CSS</h3>
+              <p>Веб интерфейс және құрылым негіздері — практикалық жобалармен.</p>
+              <div class="card-footer">
+                <a href="#.html" class="btn">Көру</a>
+                <span class="badge">Бастау — еркін</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card">
+            <img src="images/js-course.jpg" alt="JavaScript">
+            <div class="card-body">
+              <h3>JavaScript негіздері</h3>
+              <p>Динамика мен логика — интерактивті веб-қосымшалар жасауға үйретеді.</p>
+              <div class="card-footer">
+                <a href="#.html" class="btn">Көру</a>
+                <span class="badge">Тіркелу керек</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card">
+            <img src="images/python-course.jpg" alt="Python">
+            <div class="card-body">
+              <h3>Python бағдарламалау</h3>
+              <p>Алгоритмдер мен деректер талдау негіздері — бастауыштан.</p>
+              <div class="card-footer">
+                <a href="#.html" class="btn">Көру</a>
+                <span class="badge">Жақында</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section id="results" class="stats">
+      <div class="container">
+        <h2 class="section-title">QAZION нәтижелері</h2>
+        <div class="stats-grid">
+          <div class="stat"><h3>5000+</h3><p>Тіркелген оқушылар</p></div>
+          <div class="stat"><h3>20+</h3><p>IT курстар</p></div>
+          <div class="stat"><h3>30+</h3><p>Мұғалім және тренер</p></div>
+          <div class="stat"><h3>100%</h3><p>Қазақ тіліндегі контент</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+      <div class="container">
+        <h2 class="section-title">Оқушылардың пікірі</h2>
+        <div class="test-grid">
+          <blockquote class="test-card">
+            <p>“QAZION арқылы HTML курсын бітірдім — практикалық тапсырмалар нақты көмектесті.”</p>
+            <cite>— Аружан, 11 сынып</cite>
+          </blockquote>
+          <blockquote class="test-card">
+            <p>“Түсінікті және қазақша — мұғалімнің түсіндіруі өте жағымды болды.”</p>
+            <cite>— Данияр, студент</cite>
+          </blockquote>
+          <blockquote class="test-card">
+            <p>“Платформаның интерфейсі жеңіл және курстар кәсіби.”</p>
+            <cite>— Мадина</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+      <div class="container">
+        <h2 class="section-title">Жиі қойылатын сұрақтар</h2>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q">Платформа тегін бе? <span class="chev">+</span></button>
+            <div class="faq-a">Иә, көптеген курстар мен материалдар тегін. Кейбір кәсіби бағыттар ақылы болуы мүмкін.</div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q">Сертификат беріле ме? <span class="chev">+</span></button>
+            <div class="faq-a">Әр курс аяқталған соң электронды сертификат беріледі (кейбір курстарда бағалау талаптары болуы мүмкін).</div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q">Қалай тіркелуге болады? <span class="chev">+</span></button>
+            <div class="faq-a">Жоғарыдағы “Тіркелу” батырмасын басып, өз мәліметіңізді енгізіңіз. Тіркелу оңай және тез жүргізіледі.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2 class="section-title">Байланыс</h2>
+        <form id="contactForm" class="contact-form">
+          <div class="row">
+            <input type="text" name="name" placeholder="Атыңыз" required>
+            <input type="email" name="email" placeholder="Email" required>
+          </div>
+          <textarea name="message" placeholder="Хабарламаңыз..." required></textarea>
+          <div class="form-row">
+            <button type="submit" class="btn btn-primary">Жіберу</button>
+            <p id="formMsg" class="form-msg" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-final">
+      <div class="container">
+        <h2>Бүгіннен бастап үйренуді бастаңыз</h2>
+        <p>Дәл қазір өзіңіздің жеке веб-бетіңізді жасап бастаңыз. Тіркеліп, алғашқы сабақты бастаңыз.</p>
+        <a href="Register/register.html" class="btn btn-primary btn-large">Тіркелу</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>© 2025 QAZION — Қазақша IT білім платформасы. Барлық құқықтар қорғалған.</p>
+    </div>
+  </footer>
+  <script src="r.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

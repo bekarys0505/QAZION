@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Профиль — QAZION</title>
+  <link rel="stylesheet" href="css/style-profile.css">
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+<body>
+
+  <!-- Фон эффект -->
+  <div id="particles-js"></div>
+
+  <!-- Мобильді меню батырмасы -->
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+  <!-- Sidebar меню -->
+  <nav class="sidebar">
+    <ul>
+      <li><a href="../index.html"><img src="../../images/icons/1.png" alt=""> <span>Басты бет</span></a></li>
+      <li><a href="../courses.html"><img src="../../images/icons/2.png" alt=""> <span>Курстар</span></a></li>
+      <li><a href="../Блакнот/index.html"><img src="../../images/icons/3.png" alt=""> <span>Блокнот</span></a></li>
+      <li><a href="../video.html"><img src="../../images/icons/4.png" alt=""> <span>Видео сабақтар</span></a></li>
+      <li class="active"><a href="profile.html"><img src="../../images/icons/5.png" alt=""> <span>Профиль</span></a></li>
+      <li><a href="#.html"><img src="../../images/icons/6.png" alt=""> <span>Мұғалімдер</span></a></li>
+      <li><a href="../contact.html"><img src="../../images/icons/7.png" alt=""> <span>Байланыс</span></a></li>
+      <li><a href="../../index.html"><img src="../../images/icons/8.png" alt=""> <span>Шығу</span></a></li>
+    </ul>
+  </nav>
+
+  <!-- Контент -->
+  <main class="content">
+    <div class="glass-container profile-container">
+      <h2>Профиль</h2>
+
+      <div class="profile-info">
+        <div class="avatar">
+          <img src="../assets/icons/profile.svg" alt="Аватар" id="avatar">
+        </div>
+        <div class="user-details">
+          <p>Аты: <span id="userName"></span></p>
+          <p>Тегі: <span id="userSurname"></span></p>
+          <p>Телефон: <span id="userPhone"></span></p>
+          <p>Мектеп: <span id="userSchool"></span></p>
+          <p>Сынып: <span id="userClass"></span></p>
+          <p>Tуған күні: <span id="userBirthday"></span></p>
+          <p>Email: <span id="userEmail"></span></p>
+          <button id="editBtn" class="edit-btn">Редактировать</button>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="progress-section">
+        <h3>Прогресс</h3>
+        <div class="progress-bar">
+          <label>HTML</label>
+          <div class="bar"><div class="fill" id="htmlProgress">0%</div></div>
+        </div>
+        <div class="progress-bar">
+          <label>CSS</label>
+          <div class="bar"><div class="fill" id="cssProgress">0%</div></div>
+        </div>
+        <div class="progress-bar">
+          <label>JS</label>
+          <div class="bar"><div class="fill" id="jsProgress">0%</div></div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="badges-section">
+        <h3>Жетістіктер</h3>
+        <div class="badges" id="badgesContainer"></div>
+      </div>
+
+      <hr>
+
+      <div class="activity-section">
+        <h3>Соңғы әрекеттер</h3>
+        <p id="lastCourse"></p>
+        <p id="lastTask"></p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Мобильді меню үшін JS -->
+  <script>
+    function toggleMenu() {
+      document.querySelector('.sidebar').classList.toggle('active');
+    }
+  </script>
+
+  <script src="../../forgot-password/firebase-config.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+</html>

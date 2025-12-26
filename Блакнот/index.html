@@ -1,0 +1,121 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Блакнот</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="brand">
+        <div class="logo">PC</div>
+        <div>
+          <h1>Блакнот</h1>
+          <div class="small">HTML • CSS • JS — Live preview, console, тапсырмалар, экспорт</div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="small">Тақырып</div>
+        <select id="themeSelect">
+          <option value="ace/theme/monokai">Қара — Monokai</option>
+          <option value="ace/theme/dracula">Қара — Dracula</option>
+          <option value="ace/theme/github">Ашық — GitHub</option>
+          <option value="ace/theme/chrome">Ашық — Chrome</option>
+        </select>
+        <button id="runBtn" class="primary">Іске қос (Ctrl+Enter)</button>
+        <button id="saveBtn">Сақтау</button>
+        <button id="downloadBtn">Экспорт .zip</button>
+        <button id="resetBtn">Бастапқыға қайтару</button>
+        <button id="exitBtn">Шығу</button>
+      </div>
+    </header>
+
+    <div class="main">
+      <div class="left">
+        <div class="tabs" role="tablist">
+          <button class="tab active" data-target="html">HTML</button>
+          <button class="tab" data-target="css">CSS</button>
+          <button class="tab" data-target="js">JS</button>
+        </div>
+
+        <div class="editors">
+          <div class="editor" id="editor-html">
+            <div class="title">HTML <span class="small">(index.html)</span></div>
+            <div id="ace-html" style="height:100%;min-height:220px"></div>
+          </div>
+
+          <div class="editor" id="editor-css" style="display:none">
+            <div class="title">CSS <span class="small">(styles.css)</span></div>
+            <div id="ace-css" style="height:100%;min-height:220px"></div>
+          </div>
+
+          <div class="editor" id="editor-js" style="display:none">
+            <div class="title">JS <span class="small">(app.js)</span></div>
+            <div id="ace-js" style="height:100%;min-height:220px"></div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div style="flex:1">
+            <div class="templates small">Үлгілер:<br>
+              <button data-template="empty">Бос</button>
+              <button data-template="starter">Бастапқы (HTML5)</button>
+              <button data-template="bootstrap">Bootstrap 5</button>
+              <button data-template="flexbox">Flexbox мысалы</button>
+              
+            </div>
+          </div>
+
+          <div style="width:260px">
+            <div class="tasks small">Тапсырмалар:<br>
+              <div style="padding:6px;border-radius:6px;background:rgba(0,0,0,0.15);margin-bottom:6px">
+                <b>Тапсырма 1</b>: id="btn" болатын батырма жасап, оны басқанда 'Hello' alert көрсету.<br>
+                <button class="task-run" data-check="task1">Тексеру</button>
+              </div>
+              <div style="padding:6px;border-radius:6px;background:rgba(0,0,0,0.15);margin-bottom:6px">
+                <b>Тапсырма 2</b>: class="box" болатын қызыл 150x150px өлшемді блок қосу.<br>
+                <button class="task-run" data-check="task2">Тексеру</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-actions row">
+          <div class="small">Қысқа пернелер: <span class="kbd">Ctrl+S</span> сақтау • <span class="kbd">Ctrl+Enter</span> іске қосу</div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="preview">
+          <div class="top">
+            <div>Live Preview</div>
+            <div class="row"><span class="small">Көрініс:</span>
+              <select id="viewportSize"><option value="100%">Responsive</option><option value="375">375px (мобиль)</option><option value="768">768px (планшет)</option><option value="1200">1200px (десктоп)</option></select>
+            </div>
+          </div>
+          <iframe id="result" sandbox="allow-scripts allow-forms allow-same-origin"></iframe>
+        </div>
+
+        <div>
+          <div class="small">Console шығуы</div>
+          <div id="console" class="console"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Қосымша кітапханалар -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.16.0/ace.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.16.0/ext-language_tools.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.0/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/2.12.0/beautify.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
+

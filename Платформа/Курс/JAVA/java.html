@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Лекциялары — QAZION</title>
+  <link rel="stylesheet" href="../css/style-lectures.css">
+</head>
+<body>
+  <!-- Мобильді меню батырмасы -->
+  <button class="menu-toggle">☰</button>
+
+  <!-- Sidebar -->
+
+  <nav class="sidebar">
+    <ul>
+      <li><a href="../../index.html"><img src="../../../images/icons/1.png" alt=""> <span>Басты бет</span></a></li>
+      <li class="active"><a href="../../courses.html"><img src="../../../images/icons/2.png" alt=""> <span>Курстар</span></a></li>
+      <li><a href="../../../Блакнот/index.html"><img src="../../../images/icons/3.png" alt=""> <span>Блокнот</span></a></li>
+      <li><a href="../../video.html"><img src="../../../images/icons/4.png" alt=""> <span>Видео сабақтар</span></a></li>
+      <li><a href="../../profile/profile.html"><img src="../../../images/icons/5.png" alt=""> <span>Профиль</span></a></li>
+      <li><a href="../../teachers.html"><img src="../../../images/icons/6.png" alt=""> <span>Мұғалімдер</span></a></li>
+      <li><a href="../../contact.html"><img src="../../../images/icons/7.png" alt=""> <span>Байланыс</span></a></li>
+    </ul>
+  </nav>
+
+  <!-- Контент -->
+  <main class="content">
+    <h1>JavaScript Лекциялары</h1>
+
+    <ul class="lecture-list">
+      <li><a href="js_basics.html">JavaScript негіздері</a></li>
+      <li><a href="js_variables.html">Айнымалылар және мәліметтер түрлері</a></li>
+      <li><a href="js_operators.html">Операторлар және есептеулер</a></li>
+      <li><a href="js_conditions.html">Шарттар (if/else)</a></li>
+      <li><a href="js_loops.html">Циклдар (for, while)</a></li>
+      <li><a href="js_functions.html">Функциялар</a></li>
+      <li><a href="js_arrays.html">Массивтер</a></li>
+      <li><a href="js_objects.html">Объектілер</a></li>
+      <li><a href="js_dom.html">DOM және оқиғалар</a></li>
+      <li><a href="js_events.html">Event Listener және интерактивтілік</a></li>
+    </ul>
+
+    <a href="../../courses.html"><button class="back-btn">Артқа қайту</button></a>
+  </main>
+
+  <script src="../js/script-lectures.js"></script>
+  <script>
+    // Телефонда sidebar ашу/жабу
+    const menuBtn = document.querySelector('.menu-toggle');
+    const sidebar = document.querySelector('.sidebar');
+
+    menuBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

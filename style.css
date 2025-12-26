@@ -1,0 +1,310 @@
+/* ====== IMPORT FONT ====== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+/* ========== ROOT & BASE ========== */
+:root{
+  --bg-1: #eef7ff;
+  --bg-2: #ffffff;
+  --accent-1: #5f6cff;
+  --accent-2: #00c6ff;
+  --muted: #556;
+  --card-shadow: 0 12px 30px rgba(20,30,60,0.06);
+  --glass: rgba(255,255,255,0.85);
+  --radius-lg: 14px;
+  --container-w: 1200px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+  background: linear-gradient(135deg,var(--bg-1),var(--bg-2));
+  color:#081028;
+  -webkit-font-smoothing:antialiased;
+  padding-top:86px;
+  line-height:1.5;
+}
+
+/* Container */
+.container{width:92%;max-width:var(--container-w);margin:0 auto}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  border-radius:0;
+  transform:none;
+  padding:14px 22px;
+}
+
+.navbar.scrolled{box-shadow:0 18px 50px rgba(20,30,60,0.08);transform:translateY(-4px)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+
+/* logo */
+.logo{font-weight:800;font-size:20px;color:var(--accent-1);letter-spacing:0.6px;text-decoration:none}
+
+/* nav links */
+.nav{display:block}
+.nav-links{display:flex;gap:18px;list-style:none;align-items:center}
+.nav-links a{text-decoration:none;color:inherit;font-weight:600;padding:8px 6px;border-radius:8px;transition:all .18s}
+.nav-links a:hover{color:var(--accent-1);transform:translateY(-2px)}
+
+/* actions */
+.nav-actions{display:flex;gap:12px;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;border-radius:10px;background:#f6f9ff;color:#081028;text-decoration:none;border:1px solid rgba(95,108,255,0.06);font-weight:600}
+.btn:hover{transform:translateY(-3px)}
+.btn-sm{padding:8px 12px;font-size:.95rem}
+.btn-primary{background:linear-gradient(135deg,var(--accent-1),var(--accent-2));color:#021024;border:none;box-shadow:0 10px 30px rgba(95,108,255,0.12)}
+.btn-ghost{background:transparent;border:1px solid rgba(10,20,40,0.04)}
+.btn-large{padding:12px 28px;border-radius:12px;font-size:1rem}
+
+/* burger (mobile) */
+.burger{display:none;background:transparent;border:none;cursor:pointer;padding:8px;border-radius:8px}
+.burger .bar{display:block;width:22px;height:2px;background:#081028;margin:5px 0;transition:all .2s}
+
+/* mobile menu */
+.mobile-menu{
+  position:fixed;top:86px;right:18px;width:260px;background:white;border-radius:12px;box-shadow:0 20px 50px rgba(8,16,32,0.12);padding:12px;display:none;z-index:160;
+}
+.mobile-menu.open{display:block}
+.mobile-menu ul{list-style:none;padding:8px;margin:0}
+.mobile-menu li{margin:8px 0}
+.mobile-menu a{display:block;padding:10px;border-radius:8px;color:#081028;text-decoration:none}
+
+/* ================= HERO ================= */
+.hero{padding:80px 0 40px}
+.hero-grid{display:grid;grid-template-columns:1fr 460px;gap:28px;align-items:center}
+.hero-left h1{font-size:40px;line-height:1.04;margin-bottom:12px;color:#081028;animation:fadeUp .7s ease both}
+.hero-left p{font-size:18px;color:var(--muted);margin-bottom:18px;max-width:620px}
+.hero-actions{display:flex;gap:12px;align-items:center;margin-bottom:14px}
+.hero-features{display:flex;gap:12px;margin-top:12px;list-style:none;padding-left:0}
+.hero-features li{background:linear-gradient(90deg,rgba(95,108,255,0.06),rgba(0,198,255,0.04));padding:8px 12px;border-radius:10px;font-weight:600;font-size:14px;color:#081028}
+
+/* hero mockup card */
+.card.mockup{background:var(--glass);border-radius:12px;padding:12px;box-shadow:0 20px 60px rgba(8,16,32,0.06);overflow:hidden}
+.card.mockup img{width:100%;display:block;border-radius:8px}
+.mockup-badges{display:flex;gap:8px;justify-content:space-between;margin-top:12px}
+.mb{background:linear-gradient(90deg,rgba(95,108,255,0.08),rgba(0,198,255,0.06));padding:8px 10px;border-radius:8px;font-weight:700;color:#081028}
+
+/* ================= FEATURES ================= */
+.features{padding:50px 0}
+.section-title{text-align:center;font-size:28px;margin-bottom:22px}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.feature-card{background:white;border-radius:12px;padding:18px;box-shadow:var(--card-shadow);display:flex;gap:12px;align-items:flex-start;transition:transform .18s}
+.feature-card:hover{transform:translateY(-6px)}
+.feature-card .icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#eef6ff,#f0fdff);font-size:20px}
+
+/* ================= COURSES ================= */
+.courses{padding:50px 0}
+.course-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+.course-card{background:white;border-radius:12px;overflow:hidden;box-shadow:var(--card-shadow);display:flex;flex-direction:column;transition:transform .22s ease}
+.course-card:hover{transform:translateY(-8px);box-shadow:0 28px 60px rgba(20,30,60,0.08)}
+.course-card img{width:100%;height:60%;object-fit:cover}
+.card-body{padding:14px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card-body h3{margin:0;font-size:18px;color:#081028}
+.card-body p{margin:0;color:var(--muted);flex:1}
+.card-footer{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.badge{background:linear-gradient(135deg,#f6f8ff,#eef7ff);padding:6px 10px;border-radius:10px;font-weight:700;color:#4b5}
+
+/* ================= STATS ================= */
+.stats{padding:40px 0;background:linear-gradient(180deg,#fbfdff,#f4f7ff)}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;text-align:center}
+.stat{background:white;padding:14px;border-radius:10px;box-shadow:var(--card-shadow)}
+.stat h3{margin:0;color:var(--accent-1);font-size:22px}
+.stat p{margin-top:8px;color:var(--muted)}
+
+/* ================= TESTIMONIALS ================= */
+.testimonials{padding:44px 0}
+.test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.test-card{background:white;padding:16px;border-radius:10px;box-shadow:var(--card-shadow)}
+.test-card p{margin-bottom:10px;color:#333;font-style:italic}
+.test-card cite{display:block;color:#081028;font-weight:700}
+
+/* ================= FAQ ================= */
+.faq{padding:40px 0}
+.faq-list{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+.faq-q{width:100%;text-align:left;padding:14px;border-radius:10px;background:white;border:1px solid rgba(20,30,60,0.04);font-weight:700;display:flex;justify-content:space-between;align-items:center;cursor:pointer}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s;padding:0 14px;color:var(--muted)}
+.faq-a.open{padding:12px 14px 18px}
+
+/* ================= CONTACT ================= */
+.contact{padding:44px 0}
+.contact-form{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.contact-form .row{display:flex;gap:12px}
+.contact-form .row input{flex:1}
+.contact-form input, .contact-form textarea{padding:12px;border-radius:10px;border:1px solid #e6eefb;font-size:15px}
+.form-row{display:flex;align-items:center;gap:12px}
+.form-msg{color:green;font-size:14px}
+
+/* CTA */
+.cta-final{padding:36px 0;text-align:center;background:linear-gradient(135deg,#ffffff,#eef7ff);border-top:1px solid rgba(20,30,60,0.02)}
+.cta-final h2{font-size:22px;margin-bottom:8px}
+
+/* FOOTER */
+footer{padding:28px 0;background:#eef3ff;text-align:center;color:#333;margin-top:24px}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .burger{display:block}
+  .nav-actions{display:none}
+  .container{width:94%}
+  .mobile-menu{right:18px}
+}
+@media (max-width:620px){
+  .hero-left h1{font-size:26px}
+  .hero-left p{font-size:15px}
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .hero-features{flex-direction:column;gap:8px}
+  .course-card img{height:140px}
+  .contact-form .row{flex-direction:column}
+  .mockup-badges{flex-direction:column;gap:6px}
+}
+/* ========= ROBOT ARENA ========= */
+.robot-arena{
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  height: 360px;
+  perspective: 1200px;
+  margin: 0 auto;
+}
+
+/* Shadow under robot */
+.robot-shadow{
+  position:absolute;
+  bottom:0;
+  left:50%;
+  width:120px;
+  height:25px;
+  background: radial-gradient(rgba(0,0,0,0.25), transparent);
+  border-radius:50%;
+  transform: translateX(-50%);
+  filter: blur(8px);
+}
+
+/* ========== ROBOT MAIN ========== */
+.robot{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 230px;
+  z-index: 2;
+}
+
+/* HEAD */
+.robot .head{
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg,#5f6cff,#00c6ff);
+  border-radius: 50%;
+  margin: -30px auto 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* BODY */
+.robot .body{
+  width: 90px;
+  height: 115px;
+  background: linear-gradient(135deg,#021024,#081028);
+  border-radius: 22px;
+  margin: -2px auto 0;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  position: relative;
+}
+
+/* ========== ARMS ========== */
+.robot .arm{
+  width: 22px;
+  height: 90px;
+  background: #5f6cff;
+  position: absolute;
+  top: 35px;
+  border-radius: 12px;
+  transform-origin: center top;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+}
+
+/* PERFECT ARM POSITION (NO CROOKED LOOK) */
+.robot .arm.left{
+  left: -1px;    /* қол денеден табиғи шығады */
+}
+
+.robot .arm.right{
+  right: -1px;   /* симметрия */
+}
+
+/* ========== LEGS ========== */
+.robot .leg{
+  width: 26px;
+  height: 70px;
+  background: #081028;
+  position: absolute;
+  bottom: 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* PERFECT LEG PLACEMENT */
+.robot .leg.left{
+  left: 18px;
+}
+
+.robot .leg.right{
+  right: 18px;
+}
+
+/* ========= BALLS ========= */
+.ball{
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  background: linear-gradient(135deg,#5f6cff,#00c6ff);
+  color: white;
+  font-weight: bold;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  font-size: 14px;
+}
+
+/* Canvas particles background */
+#robot-bg{
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  z-index:1;
+}
+
+/* ========= RESPONSIVE ========= */
+@media(max-width:620px){
+  .robot-arena{max-width:320px;height:260px;}
+
+  .robot{width:90px;height:180px;}
+  .robot .head{width:55px;height:55px;}
+  .robot .body{width:70px;height:90px;}
+
+  .robot .arm{width:18px;height:65px;}
+  .robot .arm.left{left:-14px;}
+  .robot .arm.right{right:-14px;}
+
+  .robot .leg{width:20px;height:55px;}
+  .robot .leg.left{left:14px;}
+  .robot .leg.right{right:14px;}
+}
